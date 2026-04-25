@@ -155,7 +155,7 @@ public class DoublyLL {
 
         // obj1 — stack equivalent (just a local variable in Java)
         DoublyLL obj1 = new DoublyLL();
-
+        System.out.println("Doubly Linked List obj1 now : ");
         obj1.insertFirst(21);
         obj1.insertFirst(11);
         obj1.insertFirst(101);
@@ -163,22 +163,28 @@ public class DoublyLL {
         obj1.display();
         System.out.println("Number of nodes: " + obj1.count());
 
+        System.out.println("Doubly Linked List inserting poistiobs 4 : ");
         obj1.insertAtPosition(75, 4);
         obj1.insertAtPosition(85, 4);
         obj1.display();
 
+        System.out.println("Doubly Linked List Delete First : ");
         obj1.deleteFirst();
+        System.out.println("Doubly Linked List Delete Last : ");
         obj1.deleteLast();
+        System.out.println("Doubly Linked List Display now  : ");
         obj1.display();
 
         // obj2 — heap equivalent (all objects in Java are heap-allocated)
         DoublyLL obj2 = new DoublyLL();
-
+        System.out.println("Doubly Linked List obj2 now : ");
         obj2.insertFirst(50);
         obj2.insertFirst(51);
         obj2.insertFirst(52);
         obj2.insertLast(55);
+        System.out.println("Doubly Linked List inserting poistiobs 3 : ");
         obj2.insertAtPosition(60, 3);
+        System.out.println("Doubly Linked List Display now  : ");
         obj2.display();
         System.out.println("Number of nodes: " + obj2.count());
 
