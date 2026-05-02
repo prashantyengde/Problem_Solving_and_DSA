@@ -1,0 +1,183 @@
+package LinkedList;
+
+public class SinglyLL {
+
+    // ─── Node (inner class) ───────────────────────────────────────────────────
+    static class Node {
+        int data;
+        Node next;       // only ONE pointer — no prev in singly LL
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    // ─── Fields ───────────────────────────────────────────────────────────────
+    private Node head;
+    private int size;
+
+    // ─── Constructor ──────────────────────────────────────────────────────────
+    public SinglyLL() {
+        head = null;
+        size = 0;
+    }
+
+    // ─── Insert First ─────────────────────────────────────────────────────────
+    public void insertFirst(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        size++;
+    }
+
+    // ─── Insert Last ──────────────────────────────────────────────────────────
+    public void insertLast(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
+        size++;
+    }
+
+    // ─── Insert At Position ───────────────────────────────────────────────────
+    public void insertAtPosition(int data, int pos) {
+        if (pos < 1 || pos > size + 1) {
+            System.out.println("Invalid position");
+            return;
+        }
+
+        if (pos == 1) {
+            insertFirst(data);
+        } else if (pos == size + 1) {
+            insertLast(data);
+        } else {
+            Node newNode = new Node(data);
+            Node temp = head;
+
+            for (int i = 1; i < pos - 1; i++) {
+                temp = temp.next;
+            }
+
+            newNode.next = temp.next;
+            temp.next = newNode;
+            size++;
+        }
+    }
+
+    // ─── Delete First ─────────────────────────────────────────────────────────
+    public void deleteFirst() {
+        if (head == null) {
+            return;
+        } else if (head.next == null) {
+            head = null;
+        } else {
+            head = head.next;
+        }
+        size--;
+    }
+
+    // ─── Delete Last ──────────────────────────────────────────────────────────
+    public void deleteLast() {
+        if (head == null) {
+            return;
+        } else if (head.next == null) {
+            head = null;
+        } else {
+            Node temp = head;
+            while (temp.next.next != null) {
+                temp = temp.next;
+            }
+            temp.next = null;
+        }
+        size--;
+    }
+
+    // ─── Delete At Position ───────────────────────────────────────────────────
+    public void deleteAtPosition(int pos) {
+        if (pos < 1 || pos > size) {
+            System.out.println("Invalid position");
+            return;
+        }
+
+        if (pos == 1) {
+            deleteFirst();
+        } else if (pos == size) {
+            deleteLast();
+        } else {
+            Node temp = head;
+            for (int i = 1; i < pos - 1; i++) {
+                temp = temp.next;
+            }
+            Node target = temp.next;
+            temp.next = target.next;   // skip over target
+            size--;
+        }
+    }
+
+    // ─── Display ──────────────────────────────────────────────────────────────
+    public void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("NULL");
+    }
+
+    // ─── Count ────────────────────────────────────────────────────────────────
+    public int count() {
+        return size;
+    }
+
+    // ─── Main ─────────────────────────────────────────────────────────────────
+    public static void main(String[] args) {
+
+        // obj1
+        SinglyLL obj1 = new SinglyLL();
+        System.out.println("Singly Linked List obj1 now : ");
+        obj1.insertFirst(21);
+        obj1.insertFirst(11);
+        obj1.insertFirst(101);
+        obj1.insertFirst(111);
+        obj1.display();
+        System.out.println("Number of nodes: " + obj1.count());
+
+        System.out.println("Singly Linked List inserting position 4 : ");
+        obj1.insertAtPosition(75, 4);
+        obj1.insertAtPosition(85, 4);
+        obj1.display();
+
+        System.out.println("Singly Linked List Delete First : ");
+        obj1.deleteFirst();
+        System.out.println("Singly Linked List Delete Last : ");
+        obj1.deleteLast();
+        System.out.println("Singly Linked List Display now : ");
+        obj1.display();
+
+        // obj2
+        SinglyLL obj2 = new SinglyLL();
+        System.out.println("Singly Linked List obj2 now : ");
+        obj2.insertFirst(50);
+        obj2.insertFirst(51);
+        obj2.insertFirst(52);
+        obj2.insertLast(55);
+        System.out.println("Singly Linked List inserting position 3 : ");
+        obj2.insertAtPosition(60, 3);
+        System.out.println("Singly Linked List Display now : ");
+        obj2.display();
+        System.out.println("Number of nodes: " + obj2.count());
+    }
+}
