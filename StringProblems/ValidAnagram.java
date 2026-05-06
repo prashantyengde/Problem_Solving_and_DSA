@@ -19,7 +19,7 @@ public class ValidAnagram {
     }
 
     public static void main(String[] args) {
-        System.out.println(isAnagram("listen", "silent")); // true
+    System.out.println(isAnagram("listen", "silent")); // true
         System.out.println(isAnagram("rat", "car"));       // false
         System.out.println(isAnagram("anagram", "nagaram")); // true
     }
