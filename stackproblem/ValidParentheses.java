@@ -1,4 +1,4 @@
-package StringProblems;
+package stackproblem;
 
 import java.util.Stack;
 
