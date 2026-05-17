@@ -21,6 +21,7 @@ public class BackspaceStringCompare {
         for (char c : stack) {
             result.append(c);
         }
+        System.out.println(result.toString());
         return result.toString();
     }
 
