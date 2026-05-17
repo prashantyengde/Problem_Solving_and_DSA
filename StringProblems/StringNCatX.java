@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class StringNCatX {
 	
-
 	    public String StrNCatX(String src, String dest, int iCnt) {
 	        String result = src + " ";
 	        
