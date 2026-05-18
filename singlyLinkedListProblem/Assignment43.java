@@ -2,6 +2,8 @@ package singlyLinkedListProblem;
 
 import java.util.*;
 
+
+
 //─── Node Class ───────────────────────────────────────────────
 class Node {
 	int data;
@@ -258,3 +260,25 @@ public class Assignment43 {
 		// Output: 2 5 2 6 10
 	}
 }
+
+/*
+=== Q1: Perfect Numbers ===
+Input:  |11|->|28|->|17|->|41|->|6|->|89|
+Perfect Numbers: 6  28
+
+=== Q2: Prime Numbers ===
+Input:  |11|->|20|->|17|->|41|->|22|->|89|
+Prime Numbers: 11  17  41  89
+
+=== Q3: Addition of Even Elements ===
+Input:  |11|->|20|->|32|->|41|
+Even Sum: 52
+
+=== Q4: Second Maximum Element ===
+Input:  |110|->|230|->|320|->|240|
+Second Maximum: 240
+
+=== Q5: Sum of Digits ===
+Input:  |110|->|230|->|20|->|240|->|640|
+Digit Sums: 2  5  2  6  10
+*/
