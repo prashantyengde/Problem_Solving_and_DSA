@@ -159,7 +159,7 @@ public class SinglyLL {
         obj1.insertAtPosition(75, 4);
         obj1.insertAtPosition(85, 4);
         obj1.display();
-
+           
         System.out.println("Singly Linked List Delete First : ");
         obj1.deleteFirst();
         System.out.println("Singly Linked List Delete Last : ");
